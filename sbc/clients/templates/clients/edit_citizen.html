@@ -1,0 +1,83 @@
+{% extends "sbc/base.html" %}
+
+{% block content %}
+<h1>EDIT PAGE</h1>
+<div class="container m-10">
+    <div class="text-left">
+        <form method="post">
+            {% csrf_token %}
+            <div class="container col-md-8" style="border: 2px solid black;">
+
+                <div>
+                    <label> First name:
+                         <input class="form-control form-control-lg" id="firstname" value='{{citizen.firstname}}'
+                               name="firstname" size=80>
+
+                    </label>
+                    <span>{{ form.errors.firstname }}</span>
+                </div>
+
+                <div>
+                    <label> Last name:
+                        <input class="form-control form-control-lg" id="lastname" value='{{citizen.lastname}}'
+                               name="lastname" size=80>
+                    </label>
+
+                    <span>{{ form.errors.lastname }}</span>
+                </div>
+
+                <div>
+                    <label> Email:
+                        <input class="form-control form-control-lg" id="email" value='{{citizen.email}}'
+                               name="email" size=80>
+                    </label>
+                    <span>{{ form.errors.email }}</span>
+                </div>
+
+                <div>
+                    <label> Phone number:
+                        <input class="form-control form-control-lg" id="telephone_num" value='{{citizen.telephone_num}}'
+                               name="telephone_num" size=80>
+                    </label>
+                    <span>{{ form.errors.telephone_num }}</span>
+                </div>
+
+                <div>
+                    <label> Age:
+                        <input class="form-control form-control-lg" id="age" value='{{citizen.age}}'
+                               name="age" size=80>
+                    </label>
+                    <span>{{ form.errors.age }}</span>
+                </div>
+
+                <div>
+                    <label> Note:
+                        <input class="form-control form-control-lg" id="note" value='{{citizen.note}}'
+                               name="note" size=80>
+                    </label>
+                    <span>{{ form.errors.note }}</span>
+                </div>
+
+
+                <div>
+                    <label> Stage:
+                        <p><span id="stage">{{form.stage}}</span></p>
+                    </label>
+                    <span>{{ form.errors.stage }}</span>
+                </div>
+
+                <div class="grid">
+                    <button type="submit" class="btn btn-outline-success"
+                            style="padding: 5px 10px; margin: 5px 0px;">Submit
+                    </button>
+                    <button type="reset" class="btn btn-outline-danger" style="padding: 5px 10px; margin: 5px 5px;">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+    {% endblock %}
+

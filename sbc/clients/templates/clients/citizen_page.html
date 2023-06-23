@@ -1,0 +1,47 @@
+{% extends "sbc/base.html" %}
+
+<style>
+
+.btn.btn-primary {
+    background-color: #1CC3C3;
+    color: #DDFDFD;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+</style>
+
+{% block content %}
+<div class="container m-10">
+    <div class="text-left">
+        <h1>{{ citizen.firstname}}{{citizen.lastname}}</h1>
+        <p><label for="email">Email:</label> <span id="email">{{citizen.email}}</span></p>
+        <p><label for="telephone_num">Tel.:</label> <span id="telephone_num">{{citizen.telephone_num}}</span></p>
+        <p><label for="age">Age:</label> <span id="age">{{citizen.age}}</span></p>
+        <p><label for="note">Note:</label> <span id="note">{{citizen.note}}</span></p>
+        <p><label for="is_active">Status:</label> <span id="is_active">{{citizen.is_active}}</span></p>
+        <p><label for="created_at">Date:</label> <span id="created_at">{{citizen.created_at}}</span></p>
+        <p><label for="stage">Stage:</label> <span id="stage">{{citizen.stage}}</span></p>
+
+        <div>
+        <form method="GET" action="{{ get_absolute_url }}/clients/{{ citizen.id }}/edit">
+            <button type="submit" class="btn btn-outline-info" id="editButton">Edit</button>
+        </form>
+
+        <form method="GET" action="{{ get_absolute_url }}/clients/{{ citizen.id }}/delete">
+            <button type="submit" class="btn btn-outline-info" id="DeleteButton">Delete</button>
+        </form>
+
+        <form method="GET" action="{{ get_absolute_url }}/clients/{{ citizen.id }}/email">
+            <button type="submit" class="btn btn-outline-info" id="EmailButton">Send Email</button>
+        </form>
+        </div>
+
+        <!--        <a class="btn-primary" href="{{get_absolute_url}}/clients/{{citizen.id}}/edit" id="editButton">Edit</a>-->
+    </div>
+</div>
+
+{% endblock %}

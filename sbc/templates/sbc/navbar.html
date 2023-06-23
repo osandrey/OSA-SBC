@@ -26,12 +26,17 @@
         <li class="nav-item">
           <a href="{% url 'clients:create_client_profile' %}" type="button" class="btn btn-info" style="padding: 5px 10px;  margin-left: 10px;">Create Citizen Form</a>
         </li>
+         {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a href="{% url 'clients:view_forms_list' %}" type="button" class="btn btn-info" style="padding: 5px 10px;  margin-left: 10px;">View Citizens Forms</a>
+        </li>
+        {% endif %}
       </ul>
 
 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit" class="btn btn-warning" style="padding: 5px 10px;">Search</button>
+      <form class="d-flex" role="search" method="GET" action="{{ get_absolute_url }}/clients/search/">
+        <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+     <button class="btn btn-outline-success" type="submit" class="btn btn-warning" style="padding: 5px 10px;">Search</button>
       </form>
 
 
