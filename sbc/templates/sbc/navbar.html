@@ -1,9 +1,19 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar scroll</a>
+    <div class="navbar-brand">Navbar scroll</div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+<!--      <button-->
+<!--            class="navbar-toggler"-->
+<!--            type="button"-->
+<!--            data-toggle="collapse"-->
+<!--            data-target="#navbarScroll"-->
+<!--            aria-controls="navbarScroll"-->
+<!--            aria-expanded="false"-->
+<!--            aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
@@ -46,6 +56,34 @@
     <a href="{% url 'users:login_user' %}" type="button" class="btn btn-secondary" class="btn btn-warning" style="padding: 5px 10px;  margin-left: 10px;">Login</a>
     <a href="{% url 'users:create_user_profile' %}" type="button" class="btn btn-success" class="btn btn-warning" style="padding: 5px 10px;  margin-left: 10px;">Sign Up</a>
       {% endif %}
+
+<!--      <style>-->
+<!--      /* Media query for screens with max-width 850px */-->
+<!--      @media screen and (max-width: 850px) {-->
+<!--        .navbar-nav {-->
+<!--          flex-direction: column;-->
+<!--        }-->
+<!--        .navbar-toggler {-->
+<!--          order: 3;-->
+<!--        }-->
+<!--        .collapse.navbar-collapse {-->
+<!--          order: 4;-->
+<!--        }-->
+<!--        .navbar-nav-scroll {-->
+<!--          max-height: 200px;-->
+<!--          overflow-y: auto;-->
+<!--        }-->
+<!--        .navbar-nav-scroll li {-->
+<!--          margin-bottom: 10px;-->
+<!--        }-->
+<!--        .navbar-nav-scroll li:last-child {-->
+<!--          margin-bottom: 0;-->
+<!--        }-->
+<!--        .navbar-nav-scroll li a {-->
+<!--          padding: 5px;-->
+<!--        }-->
+<!--      }-->
+<!--    </style>-->
 
     </div>
   </div>
